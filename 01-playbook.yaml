@@ -1,0 +1,7 @@
+#play is list of play.always it should with -
+- name: ping the node
+  hosts:  mongodb
+  #this is the list of task in shell we said that command but in ansible we can say that modules or collection
+  tasks:  
+  - name: pinging the server
+    ansible.builtin.ping:  
