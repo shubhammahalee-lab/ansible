@@ -1,14 +1,17 @@
----
 - name: vars from prompt
   hosts: localhost
+  gather_facts: no
+
   vars_prompt:
     - name: username
-      prompt: enter the username
+      prompt: "Enter the username"
       private: false
+
     - name: password
-      prompt: enter the password
+      prompt: "Enter the password"
       private: true
+
   tasks:
-    - name: print the username and pass
-      ansible:builtin:debug:
-        msg: username is:{{username}},password is {{password}}
+    - name: print the username and password
+      ansible.builtin.debug:
+        msg: "username is {{ username }}, password is {{ password }}"
