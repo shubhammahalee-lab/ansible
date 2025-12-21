@@ -1,0 +1,8 @@
+---
+- name: variables from file
+  hosts: nginx
+  vars_files: variable_file.yaml
+  tasks:
+    - name: print hello
+      ansible.builtin.debug:
+        msg: hello, I am Learning {{course}}, from {{trainer}},duration is {{duration}}
